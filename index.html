@@ -160,7 +160,7 @@
         const eraWidget = new EraWidget();
         eraWidget.init({
             needRealtimeConfigs: true,
-            needHistoryConfigs: true,
+            needHistoryConfigs: false,
             needActions: true,
             maxRealtimeConfigsCount: 3,
             maxHistoryConfigsCount: 1,
@@ -174,7 +174,7 @@
                 actions = configuration.actions;
             },
             onValues: (values) => {
-                // console.log('values', values) // Use console.log when you need to debug
+                console.log('values', values) // Use console.log when you need to debug
                 const stateLed = values[configLed.id].value;
                 if (newStatusLed !== stateLed) {
                     newStatusLed = stateLed;
