@@ -55,10 +55,10 @@
             },
             onValues: (values) => {
                 console.log('values', values) // Use console.log when you need to debug
-                const imageUrl = values[configImageUrl.id].value;
-                const imageResult = values[configImageResult.id].value;
-                imageUrl.src = imageUrl
-                imageResult.textContent = imageResult
+                const imageUrlValue = values[configImageUrl.id].value;
+                const imageResultValue = values[configImageResult.id].value;
+                imageUrl.src = imageUrlValue;
+                imageResult.textContent = imageResultValue;
             },
         });
     </script>
