@@ -6,6 +6,7 @@
     <style>
         html,
         body {
+            margin-top: 50px;
             height: 100%;
             margin: 0;
         }
@@ -13,22 +14,16 @@
             width: 400px;
             height: 400px;
             margin: auto;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div>
-            <img id="imageUrl" src="" alt="Image will appear here" width="300"/>
-        </div>
-
         <div id="imageResult">loading...</div>
+        <div>
+            <img id="imageUrl" src="https://bigsmall-train-image.s3.ap-southeast-1.amazonaws.com/images/chuamotcot.png" alt="Image will appear here" width="300" />
+        </div>
     </div>
 
     <script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>
