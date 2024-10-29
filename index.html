@@ -10,11 +10,13 @@
             height: 100%;
             margin: 0;
         }
+
         .container {
             width: 100%;
             height: 100%;
             margin: auto;
         }
+
         #imageUrl {
             max-width: 100%
         }
@@ -23,7 +25,8 @@
 
 <body>
     <div class="container">
-        <p>Result: <span id="imageResult">...</span></p>
+        <p>Quick warning: <span id="imageResult1">...</span></p>
+        <p>Detail warning: <span id="imageResult2">...</span></p>
         <div>
             <img id="imageUrl" src="" alt="Image will appear here" />
         </div>
@@ -32,7 +35,8 @@
     <script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>
     <script>
         const imageUrl = document.getElementById('imageUrl');
-        const imageResult = document.getElementById('imageResult');
+        const imageResult1 = document.getElementById('imageResult1');
+        const imageResult2 = document.getElementById('imageResult2');
         let configLed = null, newStatusLed = null, actions = [];
 
         const eraWidget = new EraWidget();
@@ -49,16 +53,22 @@
             onConfiguration: (configuration) => {
                 // console.log('configuration', configuration) // Use console.log when you need to debug
                 configImageUrl = configuration.realtime_configs[0];
-                configImageResult = configuration.realtime_configs[1];
+                configImageResult1 = configuration.realtime_configs[1];
+                configImageResult2 = configuration.realtime_configs[2];
             },
             onValues: (values) => {
                 console.log('values', values) // Use console.log when you need to debug
                 const imageUrlValue = values[configImageUrl.id].value;
-                const imageResultValue = values[configImageResult.id].value;
+                const imageResultValue1 = values[configImageResult1.id].value;
+                const imageResultValue2 = values[configImageResult2.id].value;
+
                 imageUrl.src = imageUrlValue;
-                imageResult.textContent = imageResultValue;
+
+                imageResult1.textContent = imageResultValue1;
+                imageResult2.textContent = imageResultValue2;
             },
         });
     </script>
 </body>
+
 </html>
