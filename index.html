@@ -17,19 +17,37 @@
             margin: auto;
         }
 
+        #resultContainer {
+            background-color: green;
+            position: absolute;
+            color: white;
+        }
+
+        #status {
+            padding: 5px;
+        }
+
         #imageUrl {
-            max-width: 100%
+            max-width: 100%;
+            height: 90%;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <p>Quick warning: <span id="imageResult1">...</span></p>
-        <p>Detail warning: <span id="imageResult2">...</span></p>
-        <div>
-            <img id="imageUrl" src="" alt="Image will appear here" />
+        <div id="resultContainer">
+            <div id="status">
+                <span>Quick warning <span id="imageResult1">...</span>
+            </div>
+            <div id="status">
+                <span>Detail warning <span id="imageResult2">...</span>
+            </div>
         </div>
+
+        <img id="imageUrl" src="https://bigsmall-train-image.s3.amazonaws.com/images/IMG_1912.jpg"
+            alt="Image will appear here" />
+
     </div>
 
     <script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>
